@@ -4,7 +4,6 @@ const express = require('express')
 const app = express();
 const fs = require('fs');
 
-app.use('/currencies')
 
 // List to show all currencies in the file
 app.get('/currencies', (req, res) => {
@@ -22,6 +21,7 @@ app.get('/currencies', (req, res) => {
     });
 });
 
+// To query for a single currency
 app.get('/currency', (req, res) => {
     fs.readFile('./currencyDB1.json', 'utf8', (err, data) => {
         if (err) {
